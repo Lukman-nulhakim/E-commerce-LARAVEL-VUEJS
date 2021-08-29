@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
+namespace App\Http\Controllers\Admin;
+    use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
-Route::get('/logout', function(){
-    Auth::logout();
+// group route with prefix "Admin"
+Route::prefix('admin')->group(function(){
+    // group route with middleware "auth"
+    Route::group(['middleware' => 'auth'], function(){
+        // Route Dashboard
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard.index');
+    });
 });
+
+// Route category
+Route::resource('/category', CategoryController::class, ['as' => 'admin']);
