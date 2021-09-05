@@ -108,21 +108,21 @@
             </div>
 
             <li class="nav-item {{ Request::is('admin/order*') ? ' active' : '' }}">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('admin.order.index') }}">
                     <i class="fas fa-shopping-cart"></i>
                     <span>ORDERS</span>
                 </a>
             </li>
 
             <li class="nav-item {{ Request::is('admin/customer*') ? ' active' : '' }}">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('admin.customer.index') }}">
                     <i class="fas fa-users"></i>
                     <span>CUSTOMERS</span>
                 </a>
             </li>
 
             <li class="nav-item {{ Request::is('admin/slider*') ? ' active' : '' }}">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('admin.slider.index') }}">
                     <i class="fas fa-laptop"></i>
                     <span>SLIDERS</span>
                 </a>
