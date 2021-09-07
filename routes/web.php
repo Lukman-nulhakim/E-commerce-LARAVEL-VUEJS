@@ -37,3 +37,5 @@ Route::resource('/order', OrderController::class, ['except' => ['create', 'store
 Route::get('/customer', [CustomerController::class, 'index'])->name('admin.customer.index');
 // Route slider
 Route::resource('/slider', SliderController::class, ['except' => ['create', 'show', 'edit', 'update'], 'as' => 'admin']);
+// Route profile
+Route::get('/profile', [ProfileController::class, 'index'])->name('admin.profile.index');

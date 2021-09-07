@@ -65,8 +65,8 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         // Two factor authenticate
-        // Fortify::twoFactorChallangeView(function (){
-        //     return view('auth.two-factor-challange');
-        // });
+        Fortify::twoFactorChallengeView(function (){
+            return view('auth.two-factor-challenge');
+        });
     }
 }

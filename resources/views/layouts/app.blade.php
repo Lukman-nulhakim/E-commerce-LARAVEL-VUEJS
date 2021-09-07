@@ -129,7 +129,7 @@
             </li>
 
             <li class="nav-item {{ Request::is('admin/profile*') ? ' active' : '' }}">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('admin.profile.index') }}">
                     <i class="fas fa-user-circle"></i>
                     <span>PROFILE</span>
                 </a>
@@ -234,8 +234,8 @@
                 <div class="modal-body">Silahkan pilih "Logout" di bawah untuk mengakhiri sesi saat ini.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="{{ route('logout') }}" style="cursor:pointer" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                    <form id="logout-form" action="{{ route('logout') }}" class="d-none">@csrf</form>
+                    <a class="btn btn-primary" href="#" style="cursor:pointer" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                    <form id="logout-form" action="{{ route('logout') }}" class="d-none" method="POST">@csrf</form>
                 </div>
             </div>
         </div>
@@ -286,7 +286,7 @@
                 buttons: false
             });
         @endif
-    </sc>
+    </script>
 
 </body>
 </html>
