@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'Tambah User'])
+@extends('layouts.app', ['title' => 'Edit User'])
 
 @section('content')
     <div class="container-fluid">
@@ -6,17 +6,18 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow">
                     <div class="card-header">
-                        <h6 class="m-0 font-weight-bold"><i class="fas fa-user-circle"></i> TAMBAH USER</h6>
+                        <h6 class="m-0 font-weight-bold"><i class="fas fa-user-circle"></i> EDIT USER</h6>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.user.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.user.update', $user->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
 
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-group">
                                         <label>NAMA LENGKAP</label>
-                                        <input type="text" name="name" value="{{ old('name') }}" class="form-control @error('name') is-invalid @enderror" placeholder="Masukan nama">
+                                        <input type="text" name="name" value="{{ old('name', $user->name) }}" class="form-control @error('name') is-invalid @enderror" placeholder="Masukan nama">
                                         @error('name')
                                             <div class="invalid-feedback d-block">
                                                 {{ $message }}
@@ -27,7 +28,7 @@
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-group">
                                         <label>ALAMAT EMAIL</label>
-                                        <input type="email" name="email" value="{{ old('email') }}" placeholder="Masukan Email" class="form-control @error('email') is-invalid @enderror">
+                                        <input type="email" name="email" value="{{ old('email', $user->email) }}" placeholder="Masukan Email" class="form-control @error('email') is-invalid @enderror">
                                         @error('email')
                                             <div class="invalid-feedback d-block">
                                                 {{ $message }}

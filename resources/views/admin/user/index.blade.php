@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow">
                     <div class="card-header">
-                        <h6 class="m-0 font-weight-bold"><i class="fas fa-folder"></i> USERS</h6>
+                        <h6 class="m-0 font-weight-bold"><i class="fas fa-user-circle"></i> USERS</h6>
                     </div>
 
                     <div class="card-body">

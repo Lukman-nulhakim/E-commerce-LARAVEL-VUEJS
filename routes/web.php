@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-    use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +39,5 @@ Route::get('/customer', [CustomerController::class, 'index'])->name('admin.custo
 Route::resource('/slider', SliderController::class, ['except' => ['create', 'show', 'edit', 'update'], 'as' => 'admin']);
 // Route profile
 Route::get('/profile', [ProfileController::class, 'index'])->name('admin.profile.index');
+// Route user
+Route::resource('/user', UserController::class, ['except' => ['show'], 'as' => 'admin']);
