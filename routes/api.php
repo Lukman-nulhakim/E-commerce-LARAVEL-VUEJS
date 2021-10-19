@@ -44,3 +44,8 @@ Route::get('/cart/total', [CartController::class, 'getCartTotal'])->name('custom
 Route::get('/cart/total-weight', [CartController::class, 'getCartTotalWeight'])->name('customer.cart.getCartTotalWeight');
 Route::post('/cart/remove', [CartController::class, 'removeCart'])->name('customer.cart.remove');
 Route::post('/cart/remove-all', [CartController::class, 'removeAllCart'])->name('customer.cart.removeAll');
+
+// Raja Ongkir
+Route::get('/rajaongkir/provinces', [RajaOngkirController::class, 'getProvinces'])->name('customer.rajaongkir.getProvinces');
+Route::get('/rajaongkir/cities', [RajaOngkirController::class, 'getCities'])->name('customer.rajaongkir.getCities');
+Route::post('/rajaongkir/checkOngkir', [RajaOngkirController::class, 'checkOngkir'])->name('customer.rajaongkir.checkOngkir');
