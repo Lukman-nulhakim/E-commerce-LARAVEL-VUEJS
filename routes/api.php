@@ -53,3 +53,6 @@ Route::post('/rajaongkir/checkOngkir', [RajaOngkirController::class, 'checkOngki
 // midtrans
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 Route::post('/notificationHandler', [CheckoutController::class, 'notificationHandler'])->name('notificationHandler');
+
+// sliders
+Route::get('/sliders', [SliderController::class, 'index'])->name('sliders');
